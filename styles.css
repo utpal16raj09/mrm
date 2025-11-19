@@ -1,0 +1,175 @@
+        /* CSS Custom Properties for Colors */
+        :root {
+            --color-primary: #0D0D0E;
+            /* charcoal black (main background) */
+            --color-primary-dark: #1C1D21;
+            /* deeper charcoal / gear shadow */
+            --color-secondary: #FF6A00;
+            /* flame orange (main accent) */
+            --color-secondary-dark: #C84900;
+            /* darker burnt orange */
+            --color-navy: #2A3A4A;
+            /* smoky steel-blue */
+            --color-navy-light: #3E4F62;
+            /* muted blue-grey highlight */
+            --color-grey: #A5A7AB;
+            /* metal light grey */
+            --color-border: #4A4C50;
+            /* gear grey (for outlines) */
+            --color-white: #FFFFFF;
+            --color-light-bg: #F8FAFC;
+        }
+
+        /* Core UI Polish */
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--color-light-bg);
+            color: var(--color-primary);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-navy);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-secondary);
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-secondary-dark);
+        }
+
+        /* Interactive Elements */
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-secondary);
+            transition: width 0.3s;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        /* Comparison Slider Handle */
+        .handle-line {
+            width: 2px;
+            height: 100%;
+            background: var(--color-secondary);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .handle-circle {
+            width: 48px;
+            height: 48px;
+            background: var(--color-secondary);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: ew-resize;
+            z-index: 20;
+        }
+
+        /* Form Steps */
+        .step-indicator.active {
+            background-color: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+
+        .step-indicator.completed {
+            background-color: var(--color-secondary-dark);
+            color: white;
+            border-color: var(--color-secondary-dark);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Card Hover Effects */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Utility */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .bg-noise {
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+        }
+
+        /* Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Shadow */
+        .shadow-xl-orange {
+            box-shadow: 0 20px 25px -5px rgba(255, 106, 0, 0.15), 0 8px 10px -6px rgba(255, 106, 0, 0.1);
+        }
+
+        .filter-btn.active {
+            background-color: #0D0D0E;
+            color: white;
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
